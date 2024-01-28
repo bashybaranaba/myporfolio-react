@@ -5,6 +5,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contacts from "./components/Contacts";
+import Jokes from "./components/Jokes";
 import { mainTheme } from "./theme";
 import { ThemeProvider } from "@mui/material/styles";
 import { Box } from "@mui/material";
@@ -23,6 +24,8 @@ function App() {
           <Skills />
           <Box sx={{ height: "10vh" }} />
           <Projects />
+          <Box sx={{ height: "10vh" }} />
+          <Jokes />
           <Box sx={{ height: "10vh" }} />
           <Contacts />
         </div>
