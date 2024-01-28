@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Contacts from "./components/Contacts";
 import { mainTheme } from "./theme";
 import { ThemeProvider } from "@mui/material/styles";
 import { Box } from "@mui/material";
@@ -22,6 +23,8 @@ function App() {
           <Skills />
           <Box sx={{ height: "10vh" }} />
           <Projects />
+          <Box sx={{ height: "10vh" }} />
+          <Contacts />
         </div>
       </ThemeProvider>
     </>
