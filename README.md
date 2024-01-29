@@ -62,7 +62,7 @@ const MyComponent = ({ title, content }) => (
 
 **Answer:** In React, this is achieved using JSX (JavaScript XML). JSX allows writing HTML-like syntax directly in JavaScript code. Under the hood, JSX is transformed into regular JavaScript objects and function calls by a compiler. In React, this transformation involves the use of `React.createElement()` as seen in the follwing example
 
-**Example of Code **
+**Example of Code**
 
 JSX
 
@@ -115,3 +115,11 @@ const myPromise = new Promise((resolve, reject) => {
 });
 myPromise.then((data) => console.log(data));
 ```
+
+## Credits
+
+Icons used in this project are provided by [Icons8](https://icons8.com).
+
+## License
+
+This project is open-sourced under the MIT License.
