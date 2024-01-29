@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+## Baranaba's React Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Description
 
-## Available Scripts
+This portfolio website showcases my skills, projects, and experience as a Software Developer built using React
 
-In the project directory, you can run:
+### Libraries Used
 
-### `npm start`
+- React
+- Material UI v5
+- react-typing-animaton
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### API used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- official-joke-api
 
-### `npm test`
+# Questions and Answers
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **What is NPM?**  
+   **Answer:** NPM stands for Node Package Manager. It is a package manager for JavaScript and is the default tool for managing packages in Node.js, allowing users to install, update, and manage libraries and dependencies for their JavaScript projects.
 
-### `npm run build`
+2. **What is SPA?**  
+   **Answer:** SPA stands for Single Page Application. It's a web application or website that interacts with the user by dynamically rewriting the current page rather than loading entire new pages from the server. This approach results in a more seamless user experience, similar to a desktop application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **What is the event loop?**  
+   **Answer:** The event loop is a fundamental aspect of Node.js and JavaScript environments, handling asynchronous operations. It continuously checks the call stack and, if it's empty, pulls functions from the event queue to be executed. This mechanism allows JavaScript to perform non-blocking operations, despite being single-threaded.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **What is the difference between export x and export default x? How do you import them differently?**  
+   **Answer:** `export x` is a named export, allowing multiple exports per module. `export default x` is a default export, allowing only one per module. To import a named export, use `import { x } from 'module'`; for a default export, use `import x from 'module'`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. **Why do you use className as a property in React and not class?**  
+   **Answer:** In React, `className` is used instead of `class` due to the latter being a reserved keyword in JavaScript. JSX is a syntax extension for JavaScript, and using `className` avoids conflicts with the `class` keyword used in JavaScript classes.
 
-### `npm run eject`
+6. **Why should you not write the following? What will happen?**  
+   `<button onClick={setCounter(counter + 1)}> +1 </button>`  
+   **Answer:** This code incorrectly updates the state directly inside the render method, causing `setCounter` to be called every time the component renders, leading to an infinite loop. Instead, use `onClick={() => setCounter(counter + 1)}`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+7. **What is object deconstruction and how is it connected to React components (example)?**  
+   **Answer:** Object deconstruction is a JavaScript feature that allows unpacking properties from objects into distinct variables. In React, it's often used in components to extract props or state. For example:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```
+   const MyComponent = ({ title, content }) => (
+     <div>
+       <h1>{title}</h1>
+       <p>{content}</p>
+     </div>
+   );
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+8. ** How is it possible to use HTML and JavaScript in the same function (like in a React Component)? What makes it possible under the hood?**
