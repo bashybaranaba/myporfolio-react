@@ -2,7 +2,8 @@
 
 ### Description
 
-This portfolio website showcases my skills, projects, and experience as a Software Developer built using React
+This portfolio website showcases my skills, projects, and experience as a Software Developer built using React.
+The website is deployed on github pages [here](https://bashybaranaba.github.io/myporfolio-react/)
 
 ### Libraries Used
 
