@@ -22,7 +22,7 @@ const HeadingTypography = styled(Typography)(({ theme }) => ({
 
 export default function Contacts() {
   return (
-    <Container component="main" maxWidth="md">
+    <Container component="main" maxWidth="md" id="contacts">
       <StyledGrid>
         <HeadingTypography variant="h3">Get in touch</HeadingTypography>
       </StyledGrid>

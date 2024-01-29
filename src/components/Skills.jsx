@@ -22,7 +22,7 @@ const HeadingTypography = styled(Typography)(({ theme }) => ({
 
 export default function Skills() {
   return (
-    <Container component="main" maxWidth="md">
+    <Container component="main" maxWidth="md" id="skills">
       <StyledGrid>
         <HeadingTypography variant="h2">
           Skills, Tools and Technologies

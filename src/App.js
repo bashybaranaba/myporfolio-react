@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
@@ -9,28 +8,34 @@ import Jokes from "./components/Jokes";
 import { mainTheme } from "./theme";
 import { ThemeProvider } from "@mui/material/styles";
 import { Box } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { BrowserRouter as Router } from "react-router-dom";
+
+const SpaceBox = styled(Box)({
+  height: "20vh",
+});
 
 function App() {
   return (
-    <>
+    <Router>
       <ThemeProvider theme={mainTheme}>
         <header>
           <Navbar />
         </header>
         <div>
-          <Box sx={{ height: "12vh" }} />
+          <SpaceBox />
           <About />
-          <Box sx={{ height: "10vh" }} />
+          <SpaceBox />
           <Skills />
-          <Box sx={{ height: "10vh" }} />
+          <SpaceBox />
           <Projects />
-          <Box sx={{ height: "10vh" }} />
+          <SpaceBox />
           <Jokes />
-          <Box sx={{ height: "10vh" }} />
+          <SpaceBox />
           <Contacts />
         </div>
       </ThemeProvider>
-    </>
+    </Router>
   );
 }
 

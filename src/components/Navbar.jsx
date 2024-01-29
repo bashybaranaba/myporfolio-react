@@ -16,6 +16,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 
 const pages = ["About me", "Skills", "Projects", "Contact"];
+const pageSectionId = ["about", "skills", "projects", "contacts"];
 
 const StyledBox = styled(Box)(({ theme }) => ({
   flexGrow: 1,
@@ -62,7 +63,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static" color="secondary">
+    <AppBar component="nav" color="secondary">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Avatar alt="Remy Sharp" src="assets/images/logo.png" />
@@ -107,7 +108,18 @@ function Navbar() {
 
           <StyledBox>
             {pages.map((page) => (
-              <StyledButton key={page} onClick={handleCloseNavMenu}>
+              <StyledButton
+                key={page}
+                //move to the section of the page
+                href={`#${pageSectionId[pages.indexOf(page)]}`}
+                //remove the underline
+                underline="none"
+                onClick={() =>
+                  document
+                    .getElementById(pageSectionId[pages.indexOf(page)])
+                    .scrollIntoView({ behavior: "smooth" })
+                }
+              >
                 {page}
               </StyledButton>
             ))}

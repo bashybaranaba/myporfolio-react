@@ -94,7 +94,7 @@ const TypeBoxSm = styled(Box)(({ theme }) => ({
 
 export default function About() {
   return (
-    <Container component="main" maxWidth="md">
+    <Container component="main" maxWidth="md" id="about">
       <Grid container spacing={1}>
         <Grid item xs={12} md={3}>
           <StyledAvatar alt="Baranaba Mugabane" src="assets/images/me.jpeg" />

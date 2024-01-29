@@ -28,7 +28,7 @@ const HeadingTypography = styled(Typography)(({ theme }) => ({
 
 export default function Projects() {
   return (
-    <Container component="main" maxWidth="md">
+    <Container component="main" maxWidth="md" id="projects">
       <StyledGrid>
         <HeadingTypography variant="h2">Some of my Projects</HeadingTypography>
       </StyledGrid>
