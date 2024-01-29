@@ -1,10 +1,51 @@
 import * as React from "react";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import LinearProgress from "@mui/material/LinearProgress";
+import { styled } from "@mui/material/styles";
+import {
+  Container,
+  Grid,
+  Button,
+  Typography,
+  LinearProgress,
+} from "@mui/material";
 import axios from "axios";
+
+const StyledGrid = styled(Grid)(({ theme }) => ({
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "center",
+  marginBottom: theme.spacing(2),
+  "& .MuiTypography-body1": {
+    fontSize: theme.spacing(2),
+    marginLeft: theme.spacing(2),
+    [theme.breakpoints.up("md")]: {
+      fontSize: theme.spacing(3),
+      marginLeft: 0,
+    },
+  },
+}));
+
+const JokesGrid = styled(Grid)({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  padding: "32px",
+  backgroundColor: "#f5f5f5",
+  borderRadius: "10px",
+  "& .MuiLinearProgress-root": {
+    marginBottom: "16px",
+  },
+});
+
+const StyledButton = styled(Button)({
+  marginTop: "16px",
+  paddingLeft: "32px",
+  paddingRight: "32px",
+  textTransform: "none",
+});
+
+const JokesTypography = styled(Typography)({
+  marginBottom: "16px",
+});
 
 export default function Jokes() {
   const [jokes, setJokes] = React.useState([]);
@@ -31,55 +72,31 @@ export default function Jokes() {
 
   return (
     <Container component="main" maxWidth="md">
-      <Grid
-        sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
-        <Typography
-          variant="body1"
-          sx={{
-            mb: 2,
-            fontSize: { xs: "1rem", md: "1.5rem" },
-            ml: { xs: 2, md: 0 },
-          }}
-        >
+      <StyledGrid>
+        <Typography variant="body1">
           Your daily dose of giggles and grins 😁
         </Typography>
-      </Grid>
-      <Grid
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          p: 4,
-          backgroundColor: "#f5f5f5",
-          borderRadius: 3,
-        }}
-      >
-        {loading && <LinearProgress sx={{ mb: 2 }} />}
+      </StyledGrid>
+      <JokesGrid>
+        {loading && <LinearProgress />}
         {error && <Typography variant="body1">{error}</Typography>}
 
         {jokes.slice(0, 3).map((joke) => (
-          <Grid container>
+          <Grid container key={joke.id}>
             <Grid item xs={1} md={1}>
-              <Typography variant="body1" sx={{ mb: 2 }}>
-                🤣
-              </Typography>
+              <Typography variant="body1">🤣</Typography>
             </Grid>
             <Grid item xs={11} md={11}>
-              <Typography variant="body1" sx={{ mb: 2 }}>
+              <JokesTypography variant="body1">
                 {joke.setup} {joke.punchline}
-              </Typography>
+              </JokesTypography>
             </Grid>
           </Grid>
         ))}
-        <Button
-          variant="outlined"
-          onClick={fetchJokes}
-          sx={{ mt: 2, pl: 4, pr: 4, textTransform: "none" }}
-        >
+        <StyledButton variant="outlined" onClick={fetchJokes}>
           Can't stop laughing? See more jokes
-        </Button>
-      </Grid>
+        </StyledButton>
+      </JokesGrid>
     </Container>
   );
 }

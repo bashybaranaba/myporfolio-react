@@ -1,35 +1,35 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-import { Avatar } from "@mui/material";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-
+import { Container, Grid, Typography } from "@mui/material";
 import Skill from "./Skill";
+
+const StyledGrid = styled(Grid)(({ theme }) => ({
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "center",
+}));
+
+const HeadingTypography = styled(Typography)(({ theme }) => ({
+  fontWeight: 700,
+  marginBottom: theme.spacing(2),
+  fontSize: theme.spacing(4),
+  marginLeft: theme.spacing(2),
+  [theme.breakpoints.up("md")]: {
+    fontSize: theme.spacing(5),
+    marginLeft: 0,
+  },
+}));
 
 export default function Skills() {
   return (
     <Container component="main" maxWidth="md">
-      <Grid
-        sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
-        <Typography
-          variant="h2"
-          sx={{
-            fontWeight: 700,
-            mb: 2,
-            fontSize: { xs: "2rem", md: "2.5rem" },
-            ml: { xs: 2, md: 0 },
-          }}
-        >
+      <StyledGrid>
+        <HeadingTypography variant="h2">
           Skills, Tools and Technologies
-        </Typography>
-      </Grid>
-      <Grid
-        sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
+        </HeadingTypography>
+      </StyledGrid>
+
+      <StyledGrid>
         <Skill
           skillName="TypeScript"
           skillIcon="https://img.icons8.com/fluency/48/typescript--v1.png"
@@ -54,10 +54,8 @@ export default function Skills() {
           skillName="Solidity"
           skillIcon="https://img.icons8.com/color/48/000000/solidity.png"
         />
-      </Grid>
-      <Grid
-        sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
+      </StyledGrid>
+      <StyledGrid>
         <Skill
           skillName="React"
           skillIcon="https://img.icons8.com/color/48/000000/react-native.png"
@@ -86,10 +84,8 @@ export default function Skills() {
           skillName="Figma"
           skillIcon="https://img.icons8.com/color/48/000000/figma--v1.png"
         />
-      </Grid>
-      <Grid
-        sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
+      </StyledGrid>
+      <StyledGrid>
         {/* Firebase, MongoDb, Postgress */}
         <Skill
           skillName="Firebase"
@@ -103,7 +99,7 @@ export default function Skills() {
           skillName="PostgreSQL"
           skillIcon="https://img.icons8.com/color/48/000000/postgreesql.png"
         />
-      </Grid>
+      </StyledGrid>
     </Container>
   );
 }

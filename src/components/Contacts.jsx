@@ -1,30 +1,32 @@
 import * as React from "react";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
+import { styled } from "@mui/material/styles";
+import { Container, Grid, Typography } from "@mui/material";
 import Contact from "./Contact";
+
+const StyledGrid = styled(Grid)({
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "center",
+});
+
+const HeadingTypography = styled(Typography)(({ theme }) => ({
+  fontWeight: 500,
+  marginBottom: theme.spacing(2),
+  fontSize: theme.spacing(4), // Equivalent to 2rem
+  marginLeft: theme.spacing(2),
+  [theme.breakpoints.up("md")]: {
+    fontSize: theme.spacing(5), // Equivalent to 2.5rem
+    marginLeft: 0,
+  },
+}));
 
 export default function Contacts() {
   return (
     <Container component="main" maxWidth="md">
-      <Grid
-        sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
-        <Typography
-          variant="h3"
-          sx={{
-            fontWeight: 500,
-            mb: 2,
-            fontSize: { xs: "2rem", md: "2.5rem" },
-            ml: { xs: 2, md: 0 },
-          }}
-        >
-          Get in touch
-        </Typography>
-      </Grid>
-      <Grid
-        sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
+      <StyledGrid>
+        <HeadingTypography variant="h3">Get in touch</HeadingTypography>
+      </StyledGrid>
+      <StyledGrid>
         <Contact
           contactName="LinkedIn"
           contactIcon="https://img.icons8.com/color/48/000000/linkedin.png"
@@ -40,7 +42,7 @@ export default function Contacts() {
           contactIcon="https://img.icons8.com/color/48/000000/gmail-new.png"
           contactLink="mailto:bashybaranaba@gmail.com"
         />
-      </Grid>
+      </StyledGrid>
     </Container>
   );
 }

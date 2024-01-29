@@ -1,18 +1,54 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
+import { styled } from "@mui/material/styles";
+import {
+  AppBar,
+  Container,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  MenuItem,
+  Box,
+  Button,
+  Avatar,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
-import MenuItem from "@mui/material/MenuItem";
 
-const pages = ["About me ", "Skills", "Projects", "Contact"];
+const pages = ["About me", "Skills", "Projects", "Contact"];
+
+const StyledBox = styled(Box)(({ theme }) => ({
+  flexGrow: 1,
+  display: "flex",
+  [theme.breakpoints.down("md")]: {
+    display: "none",
+  },
+}));
+
+const MobileBox = styled(Box)(({ theme }) => ({
+  flexGrow: 1,
+  display: "none",
+  [theme.breakpoints.down("md")]: {
+    display: "flex",
+  },
+}));
+
+const StyledMenu = styled(Menu)({
+  display: { xs: "block", md: "none" },
+});
+
+const StyledButton = styled(Button)({
+  margin: "8px", // Equivalent to my: 2
+  color: "inherit",
+  display: "block",
+  textTransform: "none",
+});
+
+const LogoTypography = styled(Typography)({
+  marginLeft: "8px",
+  fontWeight: 600,
+  display: { xs: "none", md: "flex" },
+});
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -30,21 +66,12 @@ function Navbar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Avatar alt="Remy Sharp" src="assets/images/logo.png" />
-          <Typography
-            variant="subtitle1"
-            component="div"
-            sx={{
-              ml: 2,
-
-              fontWeight: 600,
-              display: { xs: "none", md: "flex" },
-            }}
-          >
+          <LogoTypography variant="subtitle1" component="div">
             Baranaba Mugabane
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }} />
+          </LogoTypography>
+          <StyledBox />
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <MobileBox>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -55,7 +82,7 @@ function Navbar() {
             >
               <MenuIcon />
             </IconButton>
-            <Menu
+            <StyledMenu
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -69,36 +96,24 @@ function Navbar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
-            </Menu>
-          </Box>
+            </StyledMenu>
+          </MobileBox>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <StyledBox>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "inherit",
-                  display: "block",
-                  textTransform: "none",
-                }}
-              >
+              <StyledButton key={page} onClick={handleCloseNavMenu}>
                 {page}
-              </Button>
+              </StyledButton>
             ))}
-          </Box>
+          </StyledBox>
 
-          <Box sx={{ flexGrow: 0 }}></Box>
+          <Box sx={{ flexGrow: 0 }} />
           <Button
             variant="outlined"
             sx={{ textTransform: "none" }}
@@ -111,4 +126,5 @@ function Navbar() {
     </AppBar>
   );
 }
+
 export default Navbar;

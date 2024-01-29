@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { styled } from "@mui/material/styles";
 import {
   Box,
   CardActionArea,
@@ -9,13 +10,34 @@ import {
 } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 
+const StyledBox = styled(Box)({
+  paddingRight: "112px",
+  paddingLeft: "112px",
+  paddingTop: "48px",
+  paddingBottom: "32px",
+});
+
+const StyledCard = styled(Card)({
+  borderRadius: "10px",
+});
+
+const StyledCarouselContainer = styled("div")({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+});
+
+const StyledMobileStepper = styled(MobileStepper)({
+  padding: "16px",
+});
+
 const ProjectCarousel = ({ projects }) => {
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext();
-    }, 1500); // Change slide every 3 seconds
+    }, 1500);
     return () => {
       clearInterval(timer);
     };
@@ -34,19 +56,13 @@ const ProjectCarousel = ({ projects }) => {
 
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <StyledCarouselContainer>
         <IconButton onClick={handleBack}>
           <ArrowBackIos />
         </IconButton>
 
-        <Box sx={{ pr: 14, pl: 14, pt: 6, pb: 4 }}>
-          <Card raised sx={{ borderRadius: 4 }}>
+        <StyledBox>
+          <StyledCard raised>
             <CardActionArea>
               <CardMedia
                 component="img"
@@ -54,19 +70,18 @@ const ProjectCarousel = ({ projects }) => {
                 alt={projects[activeStep].label}
               />
             </CardActionArea>
-          </Card>
-        </Box>
+          </StyledCard>
+        </StyledBox>
 
         <IconButton onClick={handleNext}>
           <ArrowForwardIos />
         </IconButton>
-      </div>
-      <MobileStepper
+      </StyledCarouselContainer>
+      <StyledMobileStepper
         variant="dots"
         steps={projects.length}
         position="static"
         activeStep={activeStep}
-        sx={{ p: 2 }}
       />
     </>
   );
