@@ -37,7 +37,7 @@ const ProjectCarousel = ({ projects }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext();
-    }, 1500);
+    }, 2500);
     return () => {
       clearInterval(timer);
     };
@@ -63,7 +63,7 @@ const ProjectCarousel = ({ projects }) => {
 
         <StyledBox>
           <StyledCard raised>
-            <CardActionArea>
+            <CardActionArea href={projects[activeStep].link} target="_blank">
               <CardMedia
                 component="img"
                 image={projects[activeStep].imagePath}

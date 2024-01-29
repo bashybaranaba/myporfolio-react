@@ -8,19 +8,21 @@ const projects = [
     title: "Arttribute",
     imagePath: "assets/images/arttribute.png",
     description:
-      "Arttribute is a platform that allows artists to showcase their work and sell it as NFTs. It is built on the Ethereum blockchain and uses IPFS for storage.",
+      "Artributes enables visual artists to create AI models that mirror their styles ",
+    link: "https://arttribute.io/",
   },
   {
     title: "JamiiLab",
     imagePath: "assets/images/jamiilab.png",
     description:
-      "JamiiLab is a platform that allows users to create and participate in online courses. It is built using the MERN stack.",
+      "A decentralized citizen science platform for collecting and sharing data.",
+    link: "https://jamiilab.vercel.app/",
   },
   {
     title: "Elimu Dao",
     imagePath: "assets/images/elimudao.png",
-    description:
-      "Elimu Dao is a platform that allows users to create and participate in online courses. It is built using the MERN stack.",
+    description: "Elimu DAO is a blockchain-powered e-learning platfrom",
+    link: "https://elimu-dao.vercel.app/",
   },
 ];
 
