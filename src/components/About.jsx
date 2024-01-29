@@ -138,7 +138,7 @@ export default function About() {
           <InfoBox>
             <SchoolOutlinedIcon color="primary" sx={{ fontSize: 40 }} />
             <IconTypography variant="subtitle1" component="div">
-              Just finished my bachelors degree in Informatics and Computer
+              Just finished my bachelor's degree in Informatics and Computer
               Science at Strathmore University
             </IconTypography>
           </InfoBox>
