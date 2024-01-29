@@ -4,9 +4,24 @@ import { Container, Grid, Typography } from "@mui/material";
 import ProjectCarousel from "./ProjectCarousel";
 
 const projects = [
-  { title: "Arttribute", imagePath: "assets/images/arttribute.png" },
-  { title: "JamiiLab", imagePath: "assets/images/jamiilab.png" },
-  { title: "Elimu Dao", imagePath: "assets/images/elimudao.png" },
+  {
+    title: "Arttribute",
+    imagePath: "assets/images/arttribute.png",
+    description:
+      "Arttribute is a platform that allows artists to showcase their work and sell it as NFTs. It is built on the Ethereum blockchain and uses IPFS for storage.",
+  },
+  {
+    title: "JamiiLab",
+    imagePath: "assets/images/jamiilab.png",
+    description:
+      "JamiiLab is a platform that allows users to create and participate in online courses. It is built using the MERN stack.",
+  },
+  {
+    title: "Elimu Dao",
+    imagePath: "assets/images/elimudao.png",
+    description:
+      "Elimu Dao is a platform that allows users to create and participate in online courses. It is built using the MERN stack.",
+  },
 ];
 
 const StyledGrid = styled(Grid)({
