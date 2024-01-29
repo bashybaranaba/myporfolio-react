@@ -13,7 +13,7 @@ import {
   Avatar,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
+import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
 
 const pages = ["About me", "Skills", "Projects", "Contact"];
 const pageSectionId = ["about", "skills", "projects", "contacts"];
@@ -129,9 +129,11 @@ function Navbar() {
           <Button
             variant="outlined"
             sx={{ textTransform: "none" }}
-            startIcon={<FileDownloadOutlinedIcon />}
+            startIcon={<InsertDriveFileOutlinedIcon />}
+            href="https://drive.google.com/file/d/1tiUlT5GJXhjc1AOFfAZfsN5z6dEIDdM4/view"
+            target="_blank"
           >
-            Download CV
+            See Resume
           </Button>
         </Toolbar>
       </Container>
