@@ -92,6 +92,10 @@ const TypeBoxSm = styled(Box)(({ theme }) => ({
   },
 }));
 
+const SpaceBox = styled(Box)(({ theme }) => ({
+  margin: theme.spacing(0.7),
+}));
+
 export default function About() {
   return (
     <Container component="main" maxWidth="md" id="about">
@@ -105,12 +109,13 @@ export default function About() {
           </HeadingTypography>
           <SubHeadingTypography variant="h4" component="div">
             {"👨🏾‍💻 I am a passionate" + " "}
+            <SpaceBox />
             <TypeBoxLg>
               <TypingAnimator
                 textArray={[" Developer", " Artist", " Designer"]}
                 cursorColor="#333"
                 textColor="black"
-                fontSize={"38px"}
+                fontSize={"37px"}
                 loop
                 typingSpeed={60}
                 delaySpeed={1000}
